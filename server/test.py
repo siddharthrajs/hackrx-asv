@@ -2,6 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 import time
+from logger import log_interaction
 
 # import re
 
@@ -41,6 +42,8 @@ Provide the most appropriate answer in **Most Precise Way eiter use table bullet
         response = requests.post(GEMINI_URL, headers=headers, params=params, json=data)
         try:
             response_json = response.json()
+            
+
         except ValueError:
             return f"Invalid JSON response: {response.text}"
 
@@ -59,7 +62,9 @@ Provide the most appropriate answer in **Most Precise Way eiter use table bullet
 
     
 if __name__ == "__main__":
-    response = query_gemini("How to make chicken biryani?")
+    prompt = input()
+    response = query_gemini(prompt)
+    log_interaction(prompt, response)
     print(response)
     
 
