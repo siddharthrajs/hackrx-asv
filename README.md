@@ -8,4 +8,3 @@ https://hackrx.in/
 - Semantic Search : KNN
 - Logic Evaluation : Prompt
 - Json Output
-- 
