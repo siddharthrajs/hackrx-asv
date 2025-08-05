@@ -1,2 +1,5 @@
 /venv
 .env
+*.pyc
+server/__pychache__
+server/logs
